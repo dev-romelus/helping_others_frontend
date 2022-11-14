@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 const login = (credentials) => {
-    return fetch('/api/v1/login', {
+    return fetch('https://helping-others.herokuapp.com/api/v1/login', {
         method: 'POST',   
         headers: {
             'Content-Type': 'application/json',
@@ -10,7 +10,7 @@ const login = (credentials) => {
 };
 
 const signup = (userData) => {
-    return fetch('/api/v1/signup', {
+    return fetch('https://helping-others.herokuapp.com/api/v1/signup', {
         method: 'POST',
         body: userData,
     });
