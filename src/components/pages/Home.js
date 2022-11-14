@@ -13,7 +13,7 @@ import Testimony from '../helpers/Testimony';
 const fetcher = url => axios.get(url, { headers: authHeader() }).then(res => res.data);
 
 const Home = ({ className }) => {
-    const { data: services } = useSWR('/api/v1/number-of-requests', fetcher, { refreshInterval: 1000 });
+    const { data: services } = useSWR('https://helping-others.herokuapp.com/api/v1/number-of-requests', fetcher, { refreshInterval: 1000 });
 
     const numberUnmetServices = useMemo(() => {
         return services ? services :  0;
