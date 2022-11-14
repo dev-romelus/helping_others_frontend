@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 function formatConversations(conversations = [], user = {}) {
     return conversations.map((conversation) => {
         const sender = user.id === conversation.sender_id;
