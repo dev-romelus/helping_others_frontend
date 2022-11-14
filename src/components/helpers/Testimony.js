@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Avatar } from 'antd';
 
-
 const UnstyledTestimony = ({ className, photo, name, description }) => {
   return (
     <div className={className}>
