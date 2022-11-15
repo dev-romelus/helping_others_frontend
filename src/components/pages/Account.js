@@ -59,7 +59,7 @@ const Account = ({ className }) => {
             )}
             <div className='identity_document'>
                 <h2>Identity document</h2>
-                <Image src={user.identity_document} />
+                <Image src={user.identity_document_url} />
             </div>
         </div>
     ) : 
