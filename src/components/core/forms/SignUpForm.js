@@ -91,6 +91,7 @@ function validateSignupForm(values) {
 }
 
 export default styled(SignUpForm)`
+    padding: 12px;
     > input {
         margin-bottom: 10px;
     }

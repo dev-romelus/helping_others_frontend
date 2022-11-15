@@ -27,4 +27,6 @@ const Layout = ({ className }) => {
   );
 };
 
-export default styled(Layout)``;
+export default styled(Layout)`
+  height: 80%;
+`;

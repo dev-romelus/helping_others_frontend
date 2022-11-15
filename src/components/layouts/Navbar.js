@@ -71,13 +71,12 @@ const Navbar = ({ className }) => {
 };
 
 export default styled(Navbar)`
-    padding: 0 16px;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    height: 46px;
+    padding: 0 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    background-color: #fff;
     > div {
         > a {
             color: #000;

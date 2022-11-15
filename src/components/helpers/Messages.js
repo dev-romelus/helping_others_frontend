@@ -24,6 +24,8 @@ const Messages = ({ className }) => {
 }
 
 export default styled(Messages)`
+    height: 100%;
+    display: block;
     display: flex;
     flex-direction: column;
     padding: 0 32px;

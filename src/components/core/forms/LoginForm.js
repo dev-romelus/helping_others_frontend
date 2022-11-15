@@ -55,7 +55,8 @@ function validateLoginForm(values) {
 }
 
 export default styled(LoginForm)`
-  > input {
-    margin-bottom: 10px;
-  }
+    padding: 12px;
+    > input {
+        margin-bottom: 10px;
+    }
 `;

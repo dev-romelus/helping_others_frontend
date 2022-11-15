@@ -18,6 +18,5 @@ const RequestService = ({ className }) => {
 }
 
 export default styled(RequestService)`
-  grid-column-start: 1;
-  grid-column-end: 4;
+    padding: 12px;
 `;

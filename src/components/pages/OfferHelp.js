@@ -57,8 +57,7 @@ const OfferHelp = ({ className }) => {
 }
 
 export default styled(OfferHelp)`
-    grid-column-start: 1;
-    grid-column-end: 4;
+    padding: 12px;
     > div {
         > .map_popup {
             position: absolute;

@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
         --border-radius: 4px;
         --box-shadow: rgba(60, 66, 87, 0.04) 0px 0px 5px 0px, rgba(0, 0, 0, 0.04) 0px 0px 10px 0px;
     }
+
+    #root {
+        height: 100%;
+    }
 `;
 
 export default GlobalStyle;
