@@ -12,7 +12,10 @@ const login = (credentials) => {
 const signup = (userData) => {
     return fetch('https://helping-others.herokuapp.com/api/v1/signup', {
         method: 'POST',
-        body: userData,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
     });
 };
 
