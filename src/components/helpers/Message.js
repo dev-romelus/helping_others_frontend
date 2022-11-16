@@ -19,11 +19,6 @@ export default styled(Message)`
   width: max-content;
   margin-bottom: 10px;
 
-  /* > span {
-    display: flex;
-    flex-direction: column;
-  } */
-
   &.right {
     align-self: flex-end;
     background-color: #1890ff;

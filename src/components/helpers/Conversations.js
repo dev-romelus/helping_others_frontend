@@ -27,7 +27,6 @@ const Conversations = ({ className }) => {
                             The need: {conversation.description}
                         </span>
                         <span onClick={() => handleClick(`/conversations/${conversation.key}/messages/${user?.id}/service/${conversation.service_id}`)}>
-                            {/* {conversation.name} */}
                             View conversation
                         </span>
                     </li>

@@ -6,11 +6,13 @@ import { Link, } from 'react-router-dom';
 
 import storage from '../../utils/storage';
 import { serviceStatuses } from '../../utils/enums';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 const MyRequests = ({ className }) => {
     const { services, loading } = useSelector((state) => state.servicesState);
     const [filteredInfo, setFilteredInfo] = useState({});
-    const filteredServices = useMemo(() => services.filter(service => service.user_id === storage.getUserId()), [services])
+    const filteredServices = useMemo(() => services.filter(service => service.user_id === storage.getUserId()), [services]);
+    const matches = useMediaQuery('(max-width: 768px)');
 
     const handleChange = (_, filters) => setFilteredInfo(filters);
 
@@ -64,7 +66,27 @@ const MyRequests = ({ className }) => {
     return (
         <div className={className}>
             <h2>My requests</h2>
-            <Table columns={columns} dataSource={filteredServices} loading={loading} onChange={handleChange} />
+            {matches ? (
+                <ul>
+                    {services.map((service) => (
+                        <li>
+                            <div>
+                                <strong>Title : </strong>
+                                <span>{service.title}</span>
+                            </div>
+                            <div>
+                                <strong>Description : </strong>
+                                <span>{service.description}</span>
+                            </div>
+                            <div>
+                                <strong>Status : </strong>
+                                <span>{serviceStatuses[service.status]}</span>
+                            </div>
+                            <Link to={`/service/${service.id}`}>See details</Link>
+                        </li>
+                    ))}
+                </ul>
+            ) : <Table columns={columns} dataSource={filteredServices} loading={loading} onChange={handleChange} />}            
         </div>
     )
 }
@@ -74,4 +96,18 @@ export default styled(MyRequests)`
     border-radius: 4px;
     padding: 12px;
     width: 100%;
+    > ul {
+        > li {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #dcdde2;
+            > div {
+                line-height: 1.5;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
 `;
